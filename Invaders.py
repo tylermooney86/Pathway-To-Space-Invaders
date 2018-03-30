@@ -25,7 +25,6 @@ turtle.register_shape("images/bullet.gif")
 turtle.register_shape("images/explosionblue.gif")
 
 #draw title
-os.system("aplay sounds/shoot.wav&")
 screen.bgpic("images/background.gif")
 title_string = "PATHWAY TO SPACE"
 title_pen = turtle.Turtle()
@@ -38,8 +37,8 @@ title_pen.write(title_string,False,align="center",font=("space_invaders.ttf", 60
 time.sleep(0.5)
 
 title_string = "INVADERS!"
-title_pen.setposition(0,-100)
-title_pen.write(title_string,False,align="center",font=("space_invaders.ttf", 60,"bold"))
+title_pen.setposition(0,0)
+title_pen.write(title_string,False,align="center",font=("space_invaders.ttf", 80,"bold"))
 title_pen.hideturtle()
 time.sleep(1)
 
@@ -234,7 +233,7 @@ while True:
             move_enemy_bullet(enemy_bullet)
 
         if enemy2_firing == False:
-            if random.randint(1,100) == 1:
+            if random.randint(1,10) == 1:
                 enemy2_firing = True
                 fire_enemy_bullet(enemy_bullet2,enemy.xcor(),enemy.ycor())
         else:
